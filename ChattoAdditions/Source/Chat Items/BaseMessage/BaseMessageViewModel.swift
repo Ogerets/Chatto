@@ -25,20 +25,26 @@
 import Foundation
 
 public enum MessageViewModelStatus {
-    case success
     case sending
     case failed
+    case sent
+    case delivered
+    case read
 }
 
 public extension MessageStatus {
     public func viewModelStatus() -> MessageViewModelStatus {
         switch self {
-        case .success:
-            return MessageViewModelStatus.success
+        case .sent:
+            return .sent
+        case .delivered:
+            return .delivered
+        case .read:
+            return .read
         case .failed:
-            return MessageViewModelStatus.failed
+            return .failed
         case .sending:
-            return MessageViewModelStatus.sending
+            return .sending
         }
     }
 }
