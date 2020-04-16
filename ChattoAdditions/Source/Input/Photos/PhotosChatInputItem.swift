@@ -89,7 +89,7 @@ open class PhotosChatInputItem: ChatInputItemProtocol {
         return self.internalTabView
     }
 
-    open func handleInput(_ input: AnyObject) {
+    open func handleInput(_ input: AnyObject) throws {
         if let image = input as? UIImage {
             self.photoInputHandler?(image)
         }

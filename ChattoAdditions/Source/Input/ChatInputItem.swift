@@ -37,5 +37,5 @@ public protocol ChatInputItemProtocol: AnyObject {
     var showsSendButton: Bool { get }
     var selected: Bool { get set }
 
-    func handleInput(_ input: AnyObject)
+    func handleInput(_ input: AnyObject) throws
 }

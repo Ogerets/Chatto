@@ -37,7 +37,7 @@ class MockInputItem: NSObject, ChatInputItemProtocol {
     let tabView = UIView()
 
     private(set) var handledInput: AnyObject?
-    func handleInput(_ input: AnyObject) {
+    func handleInput(_ input: AnyObject) throws {
         self.handledInput = input
     }
 }

@@ -71,7 +71,7 @@ extension TextChatInputItem: ChatInputItemProtocol {
         return self.internalTabView
     }
 
-    public func handleInput(_ input: AnyObject) {
+    public func handleInput(_ input: AnyObject) throws {
         if let text = input as? String {
             self.textInputHandler?(text)
         }
