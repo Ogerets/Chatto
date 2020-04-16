@@ -26,7 +26,7 @@ import Foundation
 
 open class TextChatInputItem {
     typealias Class = TextChatInputItem
-    public var textInputHandler: ((String) -> Void)?
+    public var textInputHandler: ((String) throws -> Void)?
 
     let buttonAppearance: TabInputButtonAppearance
     public init(tabInputButtonAppearance: TabInputButtonAppearance = TextChatInputItem.createDefaultButtonAppearance()) {
@@ -73,7 +73,7 @@ extension TextChatInputItem: ChatInputItemProtocol {
 
     public func handleInput(_ input: AnyObject) throws {
         if let text = input as? String {
-            self.textInputHandler?(text)
+            try self.textInputHandler?(text)
         }
     }
 }
