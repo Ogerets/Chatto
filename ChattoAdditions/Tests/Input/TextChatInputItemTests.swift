@@ -45,7 +45,7 @@ class TextChatInputItemTests: XCTestCase {
         self.inputItem.textInputHandler = { text in
             handled = true
         }
-        self.inputItem.handleInput("text" as AnyObject)
+        try? self.inputItem.handleInput("text" as AnyObject)
         XCTAssertTrue(handled)
     }
 
@@ -54,7 +54,7 @@ class TextChatInputItemTests: XCTestCase {
         self.inputItem.textInputHandler = { text in
             handled = true
         }
-        self.inputItem.handleInput(5 as AnyObject)
+        try? self.inputItem.handleInput(5 as AnyObject)
         XCTAssertFalse(handled)
     }
 }

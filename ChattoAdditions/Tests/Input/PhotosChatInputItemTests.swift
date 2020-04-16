@@ -45,7 +45,7 @@ class PhotosChatInputItemTests: XCTestCase {
         self.inputItem.photoInputHandler = { image in
             handled = true
         }
-        self.inputItem.handleInput(UIImage())
+        try? self.inputItem.handleInput(UIImage())
         XCTAssertTrue(handled)
     }
 
@@ -54,7 +54,7 @@ class PhotosChatInputItemTests: XCTestCase {
         self.inputItem.photoInputHandler = { image in
             handled = true
         }
-        self.inputItem.handleInput(5 as AnyObject)
+        try? self.inputItem.handleInput(5 as AnyObject)
         XCTAssertFalse(handled)
     }
 
