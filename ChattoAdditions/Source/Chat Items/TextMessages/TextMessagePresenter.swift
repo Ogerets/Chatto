@@ -106,7 +106,7 @@ open class TextMessagePresenter<ViewModelBuilderT, InteractionHandlerT>
     }
 
     open override func canShowMenu() -> Bool {
-        return true
+        return false
     }
 
     open override func canPerformMenuControllerAction(_ action: Selector) -> Bool {
